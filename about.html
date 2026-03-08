@@ -5,9 +5,174 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About Apex Public School</title>
+<title>About | Apex Public School</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* PAGE HEADER */
+
+.page-header
+{
+text-align:center;
+padding:40px 20px;
+background:#f4f7ff;
+}
+
+.page-header h1
+{
+color:#1E40AF;
+margin-bottom:6px;
+}
+
+
+/* SECTION */
+
+.about-section
+{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+
+/* INTRO */
+
+.intro
+{
+display:flex;
+gap:30px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.intro img
+{
+width:420px;
+border-radius:6px;
+}
+
+
+/* PRINCIPAL */
+
+.principal-box
+{
+display:flex;
+gap:25px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.principal-box img
+{
+width:200px;
+border-radius:6px;
+}
+
+
+/* COUNTERS */
+
+.stats
+{
+text-align:center;
+background:#f4f7ff;
+padding:40px 20px;
+}
+
+.stat-box
+{
+display:inline-block;
+margin:20px;
+}
+
+.stat-box h2
+{
+font-size:34px;
+color:#1E40AF;
+}
+
+
+/* FACILITIES */
+
+.facility-grid
+{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.facility-card
+{
+background:#ffffff;
+padding:20px;
+text-align:center;
+border-radius:6px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* TIMELINE */
+
+.timeline
+{
+max-width:700px;
+margin:auto;
+}
+
+.timeline-item
+{
+margin:20px 0;
+padding:15px;
+border-left:4px solid #1E40AF;
+background:#f7f7f7;
+}
+
+
+/* GALLERY */
+
+.about-gallery
+{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.about-gallery img
+{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:6px;
+transition:0.3s;
+}
+
+.about-gallery img:hover
+{
+transform:scale(1.06);
+}
+
+
+/* CTA */
+
+.cta
+{
+text-align:center;
+padding:40px 20px;
+background:#1E40AF;
+color:white;
+}
+
+.cta button
+{
+margin-top:15px;
+padding:10px 18px;
+background:white;
+border:none;
+cursor:pointer;
+}
+
+</style>
 
 </head>
 
@@ -49,21 +214,86 @@
 <section class="page-header">
 
 <h1>About Apex Public School</h1>
-<p>Learn more about our institution</p>
+<p>Education for a brighter future</p>
 
 </section>
 
 
-<section class="about-section">
+<section class="about-section intro">
+
+<img src="images/School-Building.jpeg">
+
+<div>
 
 <h2>Welcome to Apex Public School</h2>
 
 <p>
-Apex Public School, located in Anjani Bazar, Parsa, Saran, Bihar, provides quality education to students from Play Group to Class 8. The school was established with the vision of empowering young minds through modern education and strong moral values.
+Apex Public School located in Anjani Bazar, Parsa, Saran provides quality education from Play Group to Class 8. The school focuses on strong academic foundation, discipline and character development.
 </p>
 
 <p>
-Our school is recognized with UDISE code 10171706503 and registration number 2111449. We provide a supportive environment where students grow academically, socially and emotionally.
+Our institution supports students from every background and works to prepare them for future competitive examinations and responsible citizenship.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="about-section principal-box">
+
+<img src="images/Principal.jpeg">
+
+<div>
+
+<h2>Principal Message</h2>
+
+<p>
+Education builds strong character and prepares students for future challenges. Our goal is to provide equal learning opportunities for every child including economically weaker students. We focus on discipline, strong academic base and holistic development.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="stats">
+
+<div class="stat-box">
+<h2 class="counter" data-target="300">0</h2>
+<p>Students</p>
+</div>
+
+<div class="stat-box">
+<h2 class="counter" data-target="15">0</h2>
+<p>Teachers</p>
+</div>
+
+<div class="stat-box">
+<h2 class="counter" data-target="12">0</h2>
+<p>Classrooms</p>
+</div>
+
+<div class="stat-box">
+<h2>Play to 8</h2>
+<p>Classes</p>
+</div>
+
+</section>
+
+
+<section class="about-section">
+
+<h2>Mission</h2>
+
+<p>
+To provide affordable and quality education that prepares students for academic success and responsible citizenship.
+</p>
+
+<h2>Vision</h2>
+
+<p>
+To become a leading school in the region known for academic excellence and moral values.
 </p>
 
 </section>
@@ -71,36 +301,34 @@ Our school is recognized with UDISE code 10171706503 and registration number 211
 
 <section class="about-section">
 
-<h2>Our Mission</h2>
+<h2>Facilities</h2>
 
-<p>
-Our mission is to provide affordable and quality education to every child. We support students from all economic backgrounds and guide them to succeed in academic studies and future competitive examinations.
-</p>
+<div class="facility-grid">
 
-</section>
+<div class="facility-card">Smart Classrooms</div>
+<div class="facility-card">Computer Lab</div>
+<div class="facility-card">Sports Ground</div>
+<div class="facility-card">CCTV Security</div>
+<div class="facility-card">Transport</div>
+<div class="facility-card">Playground</div>
 
-
-<section class="about-section">
-
-<h2>Our Vision</h2>
-
-<p>
-Our vision is to become a leading educational institution known for academic excellence, discipline, and character building. We aim to develop responsible citizens who contribute positively to society.
-</p>
+</div>
 
 </section>
 
 
 <section class="about-section">
 
-<h2>Our Values</h2>
+<h2>Why Choose Us</h2>
 
 <ul>
 
-<li>Integrity and honesty in every action</li>
-<li>Excellence in academic performance</li>
-<li>Respect for teachers, parents and community</li>
-<li>Compassion and care for others</li>
+<li>Experienced teachers</li>
+<li>Individual student attention</li>
+<li>Safe learning environment</li>
+<li>Affordable education</li>
+<li>Modern teaching methods</li>
+<li>Focus on moral values</li>
 
 </ul>
 
@@ -109,20 +337,56 @@ Our vision is to become a leading educational institution known for academic exc
 
 <section class="about-section">
 
-<h2>Why Choose Apex Public School</h2>
+<h2>School Journey</h2>
 
-<ul>
+<div class="timeline">
 
-<li>Experienced and dedicated teaching staff</li>
-<li>Individual attention to every student</li>
-<li>Smart classroom teaching methods</li>
-<li>Strong focus on discipline and moral values</li>
-<li>Safe and secure learning environment</li>
-<li>Affordable education for all</li>
-<li>Regular parent teacher communication</li>
-<li>Sports and co curricular activities</li>
+<div class="timeline-item">
+2018 – School established
+</div>
 
-</ul>
+<div class="timeline-item">
+2020 – Smart classroom system introduced
+</div>
+
+<div class="timeline-item">
+2023 – Computer lab established
+</div>
+
+</div>
+
+</section>
+
+
+<section class="about-section">
+
+<h2>School Activities</h2>
+
+<div class="about-gallery">
+
+<img src="images/Republic-Day-img1.jpeg">
+<img src="images/Sports-Event-Prize-Distribution-img1.jpeg">
+<img src="images/Science-centre-Patna-img3.jpeg">
+<img src="images/Bihar-Museum-img1.jpeg">
+<img src="images/Vaisali-School-Trip-img1.jpeg">
+<img src="images/Classroom-img1.jpeg">
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<h2>Admission Open 2026 to 2027</h2>
+
+<p>
+Admissions available from Play Group to Class 8
+</p>
+
+<button onclick="location.href='contact.html'">
+Contact School
+</button>
 
 </section>
 
@@ -142,11 +406,6 @@ Email: Apexpublicschool61@gmail.com
 </p>
 
 </footer>
-
-
-<a href="https://wa.me/918084243031" class="whatsapp-button" target="_blank">
-WhatsApp
-</a>
 
 
 <script src="script.js"></script>
