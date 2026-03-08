@@ -91,11 +91,11 @@ left:0;
 }
 header
 {
-background:white;
+background:#ffffff;
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
 .header-top
@@ -103,67 +103,52 @@ box-shadow:0 2px 10px rgba(0,0,0,0.08);
 display:flex;
 align-items:center;
 justify-content:center;
-gap:15px;
-padding:8px 15px;
-position:relative;
+flex-direction:column;
+padding:8px 10px;
+text-align:center;
 }
 
 .logo
 {
-height:55px;
-}
-
-.school-title
-{
-text-align:center;
+height:60px;
+margin-bottom:4px;
 }
 
 .school-title h1
 {
-font-size:22px;
-color:#0A2A66;
 margin:0;
-}
-.stats-bar
-{
-display:flex;
-justify-content:center;
-gap:40px;
-padding:25px 20px;
-background:#f4f7ff;
-flex-wrap:wrap;
+font-size:22px;
+color:#000;
 }
 
-.stat
-{
-text-align:center;
-min-width:120px;
-}
-
-.stat h3
-{
-font-size:28px;
-color:#1E4DB7;
-margin-bottom:5px;
-}
-
-.stat span
-{
-font-size:14px;
-color:#444;
-}
 .location
 {
 font-size:13px;
-color:#444;
-display:block;
+color:#000;
 }
 
 .codes
 {
 font-size:11px;
-color:#666;
-margin-top:2px;
+color:#444;
+}
+
+nav
+{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:8px 0;
+border-top:1px solid #eee;
+background:#ffffff;
+}
+
+nav a
+{
+color:#000;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
 }
 
 .menu-icon
@@ -670,6 +655,7 @@ padding:10px 18px;
 border-radius:50%;
 cursor:pointer;
 }
+
 
 
 
