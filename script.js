@@ -38,7 +38,19 @@ updateCounter();
 function toggleMenu()
 {
 let menu = document.getElementById("mobileMenu");
+let overlay = document.getElementById("menuOverlay");
+
 menu.classList.toggle("show");
+overlay.classList.toggle("show");
+}
+
+function closeMenu()
+{
+let menu = document.getElementById("mobileMenu");
+let overlay = document.getElementById("menuOverlay");
+
+menu.classList.remove("show");
+overlay.classList.remove("show");
 }
 let slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
@@ -107,4 +119,5 @@ reveals[i].classList.add("active");
 }
 
 window.addEventListener("scroll",revealSections);
+
 
