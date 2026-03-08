@@ -26,40 +26,68 @@ color:#1E40AF;
 margin-bottom:6px;
 }
 
+/* FILTER BUTTONS */
+
+.gallery-filters
+{
+text-align:center;
+margin:30px 0;
+}
+
+.gallery-filters button
+{
+padding:10px 18px;
+margin:6px;
+border:none;
+background:#1E40AF;
+color:white;
+cursor:pointer;
+border-radius:4px;
+font-size:14px;
+transition:0.3s;
+}
+
+.gallery-filters button:hover
+{
+background:#16348a;
+}
 
 /* GALLERY GRID */
 
 .gallery-section
 {
-padding:40px 20px;
 max-width:1200px;
 margin:auto;
+padding:20px;
 }
 
 .gallery-grid
 {
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:18px;
 }
 
-.gallery-grid img
+.gallery-item
+{
+overflow:hidden;
+border-radius:6px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.gallery-item img
 {
 width:100%;
 height:220px;
 object-fit:cover;
-border-radius:6px;
 transition:0.4s;
 cursor:pointer;
-box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
-.gallery-grid img:hover
+.gallery-item img:hover
 {
 transform:scale(1.08);
-box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
-
 
 /* LIGHTBOX */
 
@@ -81,7 +109,6 @@ z-index:2000;
 {
 max-width:90%;
 max-height:90%;
-border-radius:6px;
 }
 
 .close-lightbox
@@ -91,6 +118,62 @@ top:20px;
 right:30px;
 font-size:40px;
 color:white;
+cursor:pointer;
+}
+
+/* COUNTERS */
+
+.achievement
+{
+background:#f4f7ff;
+padding:40px 20px;
+text-align:center;
+}
+
+.counter-box
+{
+display:inline-block;
+margin:20px;
+}
+
+.counter-box h2
+{
+color:#1E40AF;
+font-size:36px;
+}
+
+/* POPUP */
+
+#adPopup
+{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:3000;
+}
+
+.popup-content
+{
+background:white;
+padding:30px;
+text-align:center;
+border-radius:6px;
+max-width:400px;
+}
+
+.popup-content button
+{
+margin-top:15px;
+padding:8px 14px;
+background:#1E40AF;
+color:white;
+border:none;
 cursor:pointer;
 }
 
@@ -136,68 +219,82 @@ cursor:pointer;
 <section class="page-header">
 
 <h1>School Gallery</h1>
-<p>Activities and Events at Apex Public School</p>
+<p>Moments from school life</p>
 
 </section>
+
+
+<div class="gallery-filters">
+
+<button onclick="filterGallery('all')">All</button>
+<button onclick="filterGallery('event')">School Events</button>
+<button onclick="filterGallery('tour')">Tours</button>
+<button onclick="filterGallery('sports')">Sports</button>
+<button onclick="filterGallery('republic')">Republic Day</button>
+
+</div>
 
 
 <section class="gallery-section">
 
 <div class="gallery-grid">
 
-<!-- School -->
+<div class="gallery-item republic">
+<img src="images/Republic-Day-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<img src="images/School-Building.jpeg" onclick="openLightbox(this)">
+<div class="gallery-item republic">
+<img src="images/Republic-Day-img2.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<!-- Republic Day -->
+<div class="gallery-item sports">
+<img src="images/Sports-Event-Prize-Distribution-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<img src="images/Republic-Day-img1.jpeg" onclick="openLightbox(this)">
-<img src="images/Republic-Day-img2.jpeg" onclick="openLightbox(this)">
-<img src="images/Republic-Day-img3.jpeg" onclick="openLightbox(this)">
+<div class="gallery-item sports">
+<img src="images/Sports-Event-Prize-Distribution-img2.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<!-- Sports Prize -->
+<div class="gallery-item tour">
+<img src="images/Vaisali-School-Trip-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<img src="images/Sports-Event-Prize-Distribution-img1.jpeg" onclick="openLightbox(this)">
-<img src="images/Sports-Event-Prize-Distribution-img2.jpeg" onclick="openLightbox(this)">
+<div class="gallery-item tour">
+<img src="images/Vaisali-School-Trip-img2.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<!-- School Trip -->
+<div class="gallery-item tour">
+<img src="images/Vaisali-School-Trip-img3.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<img src="images/Vaisali-School-Trip-img1.jpeg" onclick="openLightbox(this)">
-<img src="images/Vaisali-School-Trip-img2.jpeg" onclick="openLightbox(this)">
-<img src="images/Vaisali-School-Trip-img3.jpeg" onclick="openLightbox(this)">
+<div class="gallery-item event">
+<img src="images/Bihar-Museum-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<!-- Bihar Museum -->
+<div class="gallery-item event">
+<img src="images/Science-centre-Patna-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
 
-<img src="images/Bihar-Museum-img1.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img2.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img3.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img4.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img5.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img6.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img7.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img8.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img9.jpeg" onclick="openLightbox(this)">
-<img src="images/Bihar-Museum-img10.jpeg" onclick="openLightbox(this)">
+</div>
 
-<!-- Science Centre -->
+</section>
 
-<img src="images/Science-centre-Patna-img1.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img2.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img3.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img4.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img5.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img6.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img7.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img8.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img9.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img10.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img11.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img12.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img13.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img14.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img15.jpeg" onclick="openLightbox(this)">
-<img src="images/Science-centre-Patna-img16.jpeg" onclick="openLightbox(this)">
 
+<section class="achievement">
+
+<div class="counter-box">
+<h2 class="counter" data-target="300">0</h2>
+<p>Students</p>
+</div>
+
+<div class="counter-box">
+<h2 class="counter" data-target="15">0</h2>
+<p>Teachers</p>
+</div>
+
+<div class="counter-box">
+<h2 class="counter" data-target="12">0</h2>
+<p>Classrooms</p>
 </div>
 
 </section>
@@ -226,24 +323,92 @@ WhatsApp
 
 
 <div id="lightbox">
-
 <span class="close-lightbox" onclick="closeLightbox()">×</span>
 <img id="lightbox-img">
+</div>
+
+
+<div id="adPopup">
+
+<div class="popup-content">
+
+<h2>Admission Open 2026-2027</h2>
+
+<p>
+Admissions open from Play Group to Class 8.
+Contact school office for enquiry.
+</p>
+
+<button onclick="closePopup()">Close</button>
+
+</div>
 
 </div>
 
 
 <script>
 
+function filterGallery(category)
+{
+let items=document.querySelectorAll(".gallery-item")
+
+items.forEach(item=>{
+if(category=="all"||item.classList.contains(category))
+{
+item.style.display="block"
+}
+else
+{
+item.style.display="none"
+}
+})
+}
+
 function openLightbox(img)
 {
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=img.src;
+document.getElementById("lightbox").style.display="flex"
+document.getElementById("lightbox-img").src=img.src
 }
 
 function closeLightbox()
 {
-document.getElementById("lightbox").style.display="none";
+document.getElementById("lightbox").style.display="none"
+}
+
+let counters=document.querySelectorAll(".counter")
+
+counters.forEach(counter=>{
+counter.innerText="0"
+
+let update=()=>{
+let target=+counter.getAttribute("data-target")
+let count=+counter.innerText
+let inc=target/80
+
+if(count<target)
+{
+counter.innerText=Math.ceil(count+inc)
+setTimeout(update,20)
+}
+else
+{
+counter.innerText=target
+}
+}
+
+update()
+})
+
+window.onload=function()
+{
+setTimeout(()=>{
+document.getElementById("adPopup").style.display="flex"
+},2000)
+}
+
+function closePopup()
+{
+document.getElementById("adPopup").style.display="none"
 }
 
 </script>
