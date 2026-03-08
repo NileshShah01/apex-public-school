@@ -12,11 +12,11 @@
 
 <style>
 
-/* CHILDREN GALLERY BACKGROUND */
+/* BACKGROUND */
 
 body
 {
-background-image:url("https://images.unsplash.com/photo-1588072432836-e10032774350");
+background-image:url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b");
 background-size:cover;
 background-attachment:fixed;
 background-position:center;
@@ -35,6 +35,32 @@ background:rgba(255,255,255,0.92);
 .page-header h1
 {
 color:#1E40AF;
+}
+
+
+/* FILTER BUTTONS */
+
+.filter-buttons
+{
+text-align:center;
+padding:20px;
+background:white;
+}
+
+.filter-buttons button
+{
+padding:10px 18px;
+margin:5px;
+border:none;
+background:#1E40AF;
+color:white;
+cursor:pointer;
+border-radius:4px;
+}
+
+.filter-buttons button:hover
+{
+background:#2563EB;
 }
 
 
@@ -60,14 +86,14 @@ gap:18px;
 }
 
 
-/* IMAGE CARD */
+/* CARD */
 
 .gallery-card
 {
 overflow:hidden;
 border-radius:6px;
 position:relative;
-box-shadow:0 4px 12px rgba(0,0,0,0.12);
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
 .gallery-card img
@@ -98,8 +124,8 @@ background:rgba(0,0,0,0.9);
 display:none;
 align-items:center;
 justify-content:center;
-z-index:2000;
 flex-direction:column;
+z-index:2000;
 }
 
 #lightbox img
@@ -110,15 +136,10 @@ border-radius:6px;
 margin-bottom:20px;
 }
 
-.lightbox-buttons
-{
-display:flex;
-gap:20px;
-}
-
 .lightbox-buttons button
 {
 padding:10px 20px;
+margin:10px;
 border:none;
 background:#1E40AF;
 color:white;
@@ -150,53 +171,60 @@ cursor:pointer;
 
 <h1>School Gallery</h1>
 
-<p>Memories from school events, trips and activities</p>
+<p>Memories from school events and activities</p>
 
 </section>
+
+
+<div class="filter-buttons">
+
+<button onclick="filterGallery('all')">All</button>
+<button onclick="filterGallery('events')">School Events</button>
+<button onclick="filterGallery('tours')">Tours</button>
+<button onclick="filterGallery('sports')">Sports</button>
+<button onclick="filterGallery('republic')">Republic Day</button>
+
+</div>
 
 
 <section class="gallery-section">
 
 <div class="gallery-grid">
 
-<div class="gallery-card">
+<div class="gallery-card events">
+<img src="images/Classroom-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
+
+<div class="gallery-card tours">
 <img src="images/Bihar-Museum-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
 </div>
 
-<div class="gallery-card">
-<img src="images/Bihar-Museum-img4.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
-<div class="gallery-card">
-<img src="images/Bihar-Museum-img5.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
-<div class="gallery-card">
+<div class="gallery-card tours">
 <img src="images/Science-centre-Patna-img3.jpeg" loading="lazy" onclick="openLightbox(this)">
 </div>
 
-<div class="gallery-card">
-<img src="images/Science-centre-Patna-img6.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
-<div class="gallery-card">
+<div class="gallery-card republic">
 <img src="images/Republic-Day-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
 </div>
 
-<div class="gallery-card">
+<div class="gallery-card republic">
 <img src="images/Republic-Day-img2.jpeg" loading="lazy" onclick="openLightbox(this)">
 </div>
 
-<div class="gallery-card">
+<div class="gallery-card sports">
 <img src="images/Sports-Event-Prize-Distribution-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
 </div>
 
-<div class="gallery-card">
+<div class="gallery-card tours">
 <img src="images/Vaisali-School-Trip-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
 </div>
 
-<div class="gallery-card">
-<img src="images/Classroom-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+<div class="gallery-card tours">
+<img src="images/Bihar-Museum-img4.jpeg" loading="lazy" onclick="openLightbox(this)">
+</div>
+
+<div class="gallery-card tours">
+<img src="images/Science-centre-Patna-img6.jpeg" loading="lazy" onclick="openLightbox(this)">
 </div>
 
 </div>
@@ -223,6 +251,7 @@ cursor:pointer;
 
 <div id="footer"></div>
 
+
 <script src="script.js"></script>
 
 <script>
@@ -232,7 +261,6 @@ let currentImage = ""
 function openLightbox(img)
 {
 currentImage = img.src
-
 document.getElementById("lightbox-img").src = currentImage
 document.getElementById("lightbox").style.display = "flex"
 }
@@ -246,8 +274,33 @@ function downloadImage()
 {
 let link = document.createElement("a")
 link.href = currentImage
-link.download = "apex-public-school-image"
+link.download = "apex-public-school-photo"
 link.click()
+}
+
+
+/* FILTER */
+
+function filterGallery(category)
+{
+let cards = document.querySelectorAll(".gallery-card")
+
+cards.forEach(card =>
+{
+if(category === "all")
+{
+card.style.display = "block"
+}
+else if(card.classList.contains(category))
+{
+card.style.display = "block"
+}
+else
+{
+card.style.display = "none"
+}
+})
+
 }
 
 </script>
