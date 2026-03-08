@@ -40,3 +40,16 @@ function toggleMenu()
 const menu = document.getElementById("nav-menu");
 menu.classList.toggle("show");
 }
+let slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+function showSlide()
+{
+slides[currentSlide].classList.remove("active");
+
+currentSlide = (currentSlide + 1) % slides.length;
+
+slides[currentSlide].classList.add("active");
+}
+
+setInterval(showSlide,4000);
