@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -11,30 +12,62 @@
 
 <style>
 
-/* PAGE HEADER */
+/* HERO */
 
-.page-header
+.gallery-hero
 {
+background:linear-gradient(rgba(10,42,102,0.7),rgba(30,77,183,0.7)),url("images/School-Building.jpeg");
+background-size:cover;
+background-position:center;
 text-align:center;
-padding:40px 20px;
+color:white;
+padding:80px 20px;
+}
+
+.gallery-hero h1
+{
+font-size:40px;
+}
+
+/* SLIDER */
+
+.slider
+{
+overflow:hidden;
 background:#f4f7ff;
+padding:30px 0;
 }
 
-.page-header h1
+.slider-track
 {
-color:#1E40AF;
-margin-bottom:6px;
+display:flex;
+gap:20px;
+animation:scroll 30s linear infinite;
 }
 
-/* FILTER BUTTONS */
+.slider-track img
+{
+width:320px;
+height:200px;
+object-fit:cover;
+border-radius:6px;
+}
 
-.gallery-filters
+@keyframes scroll
+{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
+
+/* FILTER */
+
+.filters
 {
 text-align:center;
-margin:30px 0;
+padding:30px 20px;
 }
 
-.gallery-filters button
+.filters button
 {
 padding:10px 18px;
 margin:6px;
@@ -42,37 +75,30 @@ border:none;
 background:#1E40AF;
 color:white;
 cursor:pointer;
-border-radius:4px;
-font-size:14px;
 transition:0.3s;
 }
 
-.gallery-filters button:hover
+.filters button:hover
 {
-background:#16348a;
+background:#16318f;
 }
 
 /* GALLERY GRID */
 
-.gallery-section
+.gallery
 {
+padding:30px 20px;
 max-width:1200px;
 margin:auto;
-padding:20px;
-}
-
-.gallery-grid
-{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .gallery-item
 {
+position:relative;
 overflow:hidden;
-border-radius:6px;
-box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
 .gallery-item img
@@ -81,12 +107,30 @@ width:100%;
 height:220px;
 object-fit:cover;
 transition:0.4s;
-cursor:pointer;
 }
 
-.gallery-item img:hover
+.gallery-item:hover img
 {
 transform:scale(1.08);
+}
+
+/* OVERLAY */
+
+.overlay
+{
+position:absolute;
+bottom:0;
+background:rgba(0,0,0,0.6);
+color:white;
+width:100%;
+padding:10px;
+opacity:0;
+transition:0.3s;
+}
+
+.gallery-item:hover .overlay
+{
+opacity:1;
 }
 
 /* LIGHTBOX */
@@ -102,79 +146,88 @@ background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
+flex-direction:column;
 z-index:2000;
 }
 
 #lightbox img
 {
 max-width:90%;
-max-height:90%;
+max-height:80%;
 }
 
-.close-lightbox
+.lightbox-buttons
 {
-position:absolute;
-top:20px;
-right:30px;
-font-size:40px;
+margin-top:20px;
+}
+
+.lightbox-buttons button
+{
+padding:10px 18px;
+margin:5px;
+border:none;
+background:#1E40AF;
 color:white;
 cursor:pointer;
 }
 
 /* COUNTERS */
 
-.achievement
+.gallery-stats
 {
 background:#f4f7ff;
-padding:40px 20px;
 text-align:center;
+padding:40px 20px;
 }
 
-.counter-box
+.stat
 {
 display:inline-block;
 margin:20px;
 }
 
-.counter-box h2
+.stat h2
 {
+font-size:34px;
 color:#1E40AF;
-font-size:36px;
 }
 
-/* POPUP */
+/* FOOTER EMERGENT STYLE */
 
-#adPopup
+.footer
 {
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:3000;
-}
-
-.popup-content
-{
-background:white;
-padding:30px;
-text-align:center;
-border-radius:6px;
-max-width:400px;
-}
-
-.popup-content button
-{
-margin-top:15px;
-padding:8px 14px;
-background:#1E40AF;
+background:#0a2a66;
 color:white;
-border:none;
-cursor:pointer;
+padding:40px 20px;
+}
+
+.footer-grid
+{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.footer h3
+{
+margin-bottom:10px;
+}
+
+.footer a
+{
+color:white;
+text-decoration:none;
+display:block;
+margin:4px 0;
+}
+
+.footer-bottom
+{
+text-align:center;
+margin-top:20px;
+font-size:14px;
 }
 
 </style>
@@ -183,11 +236,10 @@ cursor:pointer;
 
 <body>
 
-<header class="header">
 
-<div class="header-container">
+<header>
 
-<div class="logo-school">
+<div class="header-top">
 
 <img src="images/ApexPublicSchoolLogo.png" class="logo">
 
@@ -199,7 +251,7 @@ cursor:pointer;
 
 </div>
 
-<nav class="main-menu">
+<nav>
 
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -211,108 +263,140 @@ cursor:pointer;
 
 </nav>
 
-</div>
-
 </header>
 
 
-<section class="page-header">
+<section class="gallery-hero">
 
 <h1>School Gallery</h1>
-<p>Moments from school life</p>
+<p>Activities and Events at Apex Public School</p>
 
 </section>
 
 
-<div class="gallery-filters">
+<section class="slider">
+
+<div class="slider-track">
+
+<img src="images/Bihar-Museum-img1.jpeg">
+<img src="images/Science-centre-Patna-img3.jpeg">
+<img src="images/Republic-Day-img1.jpeg">
+<img src="images/Sports-Event-Prize-Distribution-img1.jpeg">
+<img src="images/Vaisali-School-Trip-img1.jpeg">
+<img src="images/School-Building.jpeg">
+
+</div>
+
+</section>
+
+
+<section class="filters">
 
 <button onclick="filterGallery('all')">All</button>
-<button onclick="filterGallery('event')">School Events</button>
 <button onclick="filterGallery('tour')">Tours</button>
 <button onclick="filterGallery('sports')">Sports</button>
-<button onclick="filterGallery('republic')">Republic Day</button>
+<button onclick="filterGallery('event')">Events</button>
 
+</section>
+
+
+<section class="gallery">
+
+<div class="gallery-item tour">
+<img src="images/Bihar-Museum-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+<div class="overlay">Bihar Museum Tour</div>
 </div>
 
+<div class="gallery-item tour">
+<img src="images/Science-centre-Patna-img3.jpeg" loading="lazy" onclick="openLightbox(this)">
+<div class="overlay">Science Centre Visit</div>
+</div>
 
-<section class="gallery-section">
-
-<div class="gallery-grid">
-
-<div class="gallery-item republic">
+<div class="gallery-item event">
 <img src="images/Republic-Day-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
-<div class="gallery-item republic">
-<img src="images/Republic-Day-img2.jpeg" loading="lazy" onclick="openLightbox(this)">
+<div class="overlay">Republic Day Celebration</div>
 </div>
 
 <div class="gallery-item sports">
 <img src="images/Sports-Event-Prize-Distribution-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
-<div class="gallery-item sports">
-<img src="images/Sports-Event-Prize-Distribution-img2.jpeg" loading="lazy" onclick="openLightbox(this)">
+<div class="overlay">Sports Event</div>
 </div>
 
 <div class="gallery-item tour">
 <img src="images/Vaisali-School-Trip-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
-<div class="gallery-item tour">
-<img src="images/Vaisali-School-Trip-img2.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
-<div class="gallery-item tour">
-<img src="images/Vaisali-School-Trip-img3.jpeg" loading="lazy" onclick="openLightbox(this)">
+<div class="overlay">Vaishali School Trip</div>
 </div>
 
 <div class="gallery-item event">
-<img src="images/Bihar-Museum-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
-<div class="gallery-item event">
-<img src="images/Science-centre-Patna-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
-</div>
-
+<img src="images/Classroom-img1.jpeg" loading="lazy" onclick="openLightbox(this)">
+<div class="overlay">Classroom Activity</div>
 </div>
 
 </section>
 
 
-<section class="achievement">
+<section class="gallery-stats">
 
-<div class="counter-box">
-<h2 class="counter" data-target="300">0</h2>
-<p>Students</p>
+<div class="stat">
+<h2 class="counter" data-target="500">0</h2>
+<p>Event Photos</p>
 </div>
 
-<div class="counter-box">
-<h2 class="counter" data-target="15">0</h2>
-<p>Teachers</p>
+<div class="stat">
+<h2 class="counter" data-target="20">0</h2>
+<p>School Activities</p>
 </div>
 
-<div class="counter-box">
-<h2 class="counter" data-target="12">0</h2>
-<p>Classrooms</p>
+<div class="stat">
+<h2 class="counter" data-target="5">0</h2>
+<p>Educational Tours</p>
 </div>
 
 </section>
 
 
-<footer>
+<div id="lightbox">
 
-<p>
-Apex Public School<br>
-Anjani Bazar, Near SBI Anjani Branch<br>
-Parsa, Saran<br>
-Pin 841219
-</p>
+<img id="lightbox-img">
 
-<p>
-Mobile and WhatsApp: 8084243031<br>
-Email: Apexpublicschool61@gmail.com
-</p>
+<div class="lightbox-buttons">
+
+<button onclick="downloadImage()">Download</button>
+<button onclick="closeLightbox()">Close</button>
+
+</div>
+
+</div>
+
+
+<footer class="footer">
+
+<div class="footer-grid">
+
+<div>
+<h3>Apex Public School</h3>
+<p>Anjani Bazar, Near SBI Anjani Branch<br>Parsa, Saran</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<a href="about.html">About</a>
+<a href="admissions.html">Admissions</a>
+<a href="facilities.html">Facilities</a>
+<a href="gallery.html">Gallery</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>Mobile: 8084243031</p>
+<p>Email: Apexpublicschool61@gmail.com</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© Apex Public School
+</div>
 
 </footer>
 
@@ -322,38 +406,16 @@ WhatsApp
 </a>
 
 
-<div id="lightbox">
-<span class="close-lightbox" onclick="closeLightbox()">×</span>
-<img id="lightbox-img">
-</div>
-
-
-<div id="adPopup">
-
-<div class="popup-content">
-
-<h2>Admission Open 2026-2027</h2>
-
-<p>
-Admissions open from Play Group to Class 8.
-Contact school office for enquiry.
-</p>
-
-<button onclick="closePopup()">Close</button>
-
-</div>
-
-</div>
-
-
 <script>
 
-function filterGallery(category)
+/* FILTER */
+
+function filterGallery(type)
 {
 let items=document.querySelectorAll(".gallery-item")
 
 items.forEach(item=>{
-if(category=="all"||item.classList.contains(category))
+if(type==="all" || item.classList.contains(type))
 {
 item.style.display="block"
 }
@@ -362,12 +424,18 @@ else
 item.style.display="none"
 }
 })
+
 }
+
+/* LIGHTBOX */
+
+let currentImg
 
 function openLightbox(img)
 {
+currentImg=img.src
+document.getElementById("lightbox-img").src=currentImg
 document.getElementById("lightbox").style.display="flex"
-document.getElementById("lightbox-img").src=img.src
 }
 
 function closeLightbox()
@@ -375,15 +443,27 @@ function closeLightbox()
 document.getElementById("lightbox").style.display="none"
 }
 
-let counters=document.querySelectorAll(".counter")
+/* DOWNLOAD */
 
-counters.forEach(counter=>{
+function downloadImage()
+{
+let link=document.createElement("a")
+link.href=currentImg
+link.download="school-photo"
+link.click()
+}
+
+/* COUNTERS */
+
+document.querySelectorAll(".counter").forEach(counter=>{
+
 counter.innerText="0"
 
-let update=()=>{
-let target=+counter.getAttribute("data-target")
-let count=+counter.innerText
-let inc=target/80
+const update=()=>{
+
+const target=+counter.getAttribute("data-target")
+const count=+counter.innerText
+const inc=target/80
 
 if(count<target)
 {
@@ -394,22 +474,12 @@ else
 {
 counter.innerText=target
 }
+
 }
 
 update()
+
 })
-
-window.onload=function()
-{
-setTimeout(()=>{
-document.getElementById("adPopup").style.display="flex"
-},2000)
-}
-
-function closePopup()
-{
-document.getElementById("adPopup").style.display="none"
-}
 
 </script>
 
