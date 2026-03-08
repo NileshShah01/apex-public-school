@@ -16,19 +16,12 @@ width:auto;
 }
 header
 {
-background:#0a2a66;
+background:#0A2A66;
 color:white;
 padding:12px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
-}
-
-nav
-{
-display:flex;
-gap:20px;
 }
 
 nav a
@@ -36,11 +29,18 @@ nav a
 color:white;
 text-decoration:none;
 font-weight:600;
+padding:8px 12px;
+border-radius:4px;
+}
+
+nav a:hover
+{
+background:#1E4DB7;
 }
 
 .hero
 {
-height:400px;
+height:420px;
 background:url("images/School-Building.jpeg");
 background-size:cover;
 background-position:center;
@@ -48,23 +48,34 @@ display:flex;
 align-items:center;
 justify-content:center;
 color:white;
-font-size:30px;
+font-size:34px;
+text-shadow:0 2px 6px rgba(0,0,0,0.6);
 }
 
 .notice
 {
-background:#ffd800;
+background:#E8F1FF;
+border-left:6px solid #1E4DB7;
 padding:15px;
 text-align:center;
+font-weight:600;
 }
 
-.stats
+.box
 {
-display:flex;
-justify-content:space-around;
-padding:40px;
+background:white;
+border:2px solid #E8F1FF;
+padding:20px;
+width:160px;
+text-align:center;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
+.box h3
+{
+color:#1E4DB7;
+}
 .box
 {
 background:#eee;
@@ -75,13 +86,19 @@ text-align:center;
 
 .principal
 {
-padding:40px;
-background:#f5f5f5;
+background:#E8F1FF;
+padding:50px;
+text-align:center;
 }
-
 .facilities
 {
-padding:40px;
+background:white;
+padding:50px;
+}
+
+.facilities li
+{
+padding:8px;
 }
 .map
 {
@@ -90,12 +107,16 @@ text-align:center;
 }
 footer
 {
-background:#0a2a66;
+background:#0A2A66;
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
 }
-
+.facilities li:hover
+{
+color:#1E4DB7;
+cursor:pointer;
+}
 
 
 
