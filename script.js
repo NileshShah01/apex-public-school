@@ -45,11 +45,17 @@ let currentSlide = 0;
 
 function showSlide()
 {
-slides[currentSlide].classList.remove("active");
+slides.forEach(slide => slide.classList.remove("active"));
 
-currentSlide = (currentSlide + 1) % slides.length;
+currentSlide++;
+
+if(currentSlide >= slides.length)
+{
+currentSlide = 0;
+}
 
 slides[currentSlide].classList.add("active");
 }
 
-setInterval(showSlide,4000);
+setInterval(showSlide,5000);
+
