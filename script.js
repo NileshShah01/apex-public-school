@@ -58,4 +58,3 @@ slides[currentSlide].classList.add("active");
 }
 
 setInterval(showSlide,5000);
-
