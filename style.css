@@ -1,6 +1,92 @@
 /* RESET */
 
 *
+.site-header
+{
+background:#ffffff;
+border-bottom:1px solid #e5e7eb;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.header-inner
+{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:6px 10px;
+}
+
+.logo-area
+{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo
+{
+width:48px;
+height:48px;
+object-fit:contain;
+}
+
+.school-text h1
+{
+font-size:22px;
+margin:0;
+color:#1E40AF;
+}
+
+.location
+{
+font-size:12px;
+margin:2px 0;
+color:#444;
+}
+
+.codes
+{
+font-size:11px;
+color:#777;
+}
+
+.menu
+{
+display:flex;
+list-style:none;
+gap:22px;
+margin:0;
+padding:0;
+}
+
+.menu a
+{
+text-decoration:none;
+color:#1E40AF;
+font-size:14px;
+font-weight:500;
+position:relative;
+}
+.menu a::after
+{
+content:"";
+position:absolute;
+left:0;
+bottom:-4px;
+width:0;
+height:2px;
+background:#2563EB;
+transition:0.3s;
+}
+
+.menu a:hover::after
+{
+width:100%;
+}
 {
 margin:0;
 padding:0;
@@ -433,4 +519,5 @@ font-size:40px;
 color:white;
 cursor:pointer;
 }
+
 
