@@ -11,29 +11,45 @@
 
 <style>
 
+/* OLD MAP BACKGROUND */
+
+body
+{
+background-image:url("https://images.unsplash.com/photo-1586165368502-1bad197a6461");
+background-size:cover;
+background-attachment:fixed;
+background-position:center;
+}
+
+
 /* PAGE HEADER */
 
 .page-header
 {
 text-align:center;
-padding:40px 20px;
-background:#f4f7ff;
+padding:50px 20px;
+background:rgba(255,255,255,0.92);
+backdrop-filter:blur(4px);
 }
 
 .page-header h1
 {
 color:#1E40AF;
-margin-bottom:6px;
+font-size:36px;
+margin-bottom:8px;
 }
 
 
-/* SECTION */
+/* SECTION BASE */
 
 .about-section
 {
 max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:50px 20px;
+background:rgba(255,255,255,0.95);
+margin-bottom:30px;
+border-radius:6px;
 }
 
 
@@ -51,6 +67,12 @@ flex-wrap:wrap;
 {
 width:420px;
 border-radius:6px;
+transition:0.4s;
+}
+
+.intro img:hover
+{
+transform:scale(1.04);
 }
 
 
@@ -59,41 +81,41 @@ border-radius:6px;
 .principal-box
 {
 display:flex;
-gap:25px;
+gap:30px;
 align-items:center;
 flex-wrap:wrap;
 }
 
 .principal-box img
 {
-width:200px;
+width:220px;
 border-radius:6px;
 }
 
 
-/* COUNTERS */
+/* STATS */
 
 .stats
 {
 text-align:center;
-background:#f4f7ff;
-padding:40px 20px;
+background:rgba(255,255,255,0.9);
+padding:50px 20px;
 }
 
 .stat-box
 {
 display:inline-block;
-margin:20px;
+margin:20px 30px;
 }
 
 .stat-box h2
 {
-font-size:34px;
+font-size:38px;
 color:#1E40AF;
 }
 
 
-/* FACILITIES */
+/* FACILITIES GRID */
 
 .facility-grid
 {
@@ -104,11 +126,17 @@ gap:20px;
 
 .facility-card
 {
-background:#ffffff;
+background:white;
 padding:20px;
 text-align:center;
 border-radius:6px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 6px 14px rgba(0,0,0,0.12);
+transition:0.3s;
+}
+
+.facility-card:hover
+{
+transform:translateY(-6px);
 }
 
 
@@ -123,9 +151,9 @@ margin:auto;
 .timeline-item
 {
 margin:20px 0;
-padding:15px;
+padding:16px;
 border-left:4px solid #1E40AF;
-background:#f7f7f7;
+background:#f4f7ff;
 }
 
 
@@ -144,12 +172,12 @@ width:100%;
 height:180px;
 object-fit:cover;
 border-radius:6px;
-transition:0.3s;
+transition:0.4s;
 }
 
 .about-gallery img:hover
 {
-transform:scale(1.06);
+transform:scale(1.08);
 }
 
 
@@ -158,7 +186,7 @@ transform:scale(1.06);
 .cta
 {
 text-align:center;
-padding:40px 20px;
+padding:50px 20px;
 background:#1E40AF;
 color:white;
 }
@@ -166,10 +194,18 @@ color:white;
 .cta button
 {
 margin-top:15px;
-padding:10px 18px;
+padding:12px 22px;
 background:white;
 border:none;
 cursor:pointer;
+font-weight:bold;
+border-radius:4px;
+transition:0.3s;
+}
+
+.cta button:hover
+{
+background:#facc15;
 }
 
 </style>
@@ -178,37 +214,8 @@ cursor:pointer;
 
 <body>
 
-<header class="header">
 
-<div class="header-container">
-
-<div class="logo-school">
-
-<img src="images/ApexPublicSchoolLogo.png" class="logo">
-
-<div class="school-title">
-<h1>Apex Public School</h1>
-<span class="location">Anjani Bazar</span>
-<p class="codes">UDISE: 10171706503 | Registration: 2111449</p>
-</div>
-
-</div>
-
-<nav class="main-menu">
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="academics.html">Academics</a>
-<a href="admissions.html">Admissions</a>
-<a href="facilities.html">Facilities</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
-
-</nav>
-
-</div>
-
-</header>
+<div id="header"></div>
 
 
 <section class="page-header">
@@ -232,7 +239,7 @@ Apex Public School located in Anjani Bazar, Parsa, Saran provides quality educat
 </p>
 
 <p>
-Our institution supports students from every background and works to prepare them for future competitive examinations and responsible citizenship.
+Our institution supports students from every background and prepares them for future competitive examinations and responsible citizenship.
 </p>
 
 </div>
@@ -341,17 +348,9 @@ To become a leading school in the region known for academic excellence and moral
 
 <div class="timeline">
 
-<div class="timeline-item">
-2018 – School established
-</div>
-
-<div class="timeline-item">
-2020 – Smart classroom system introduced
-</div>
-
-<div class="timeline-item">
-2023 – Computer lab established
-</div>
+<div class="timeline-item">2018 – School established</div>
+<div class="timeline-item">2020 – Smart classroom introduced</div>
+<div class="timeline-item">2023 – Computer lab established</div>
 
 </div>
 
@@ -380,9 +379,7 @@ To become a leading school in the region known for academic excellence and moral
 
 <h2>Admission Open 2026 to 2027</h2>
 
-<p>
-Admissions available from Play Group to Class 8
-</p>
+<p>Admissions available from Play Group to Class 8</p>
 
 <button onclick="location.href='contact.html'">
 Contact School
@@ -391,22 +388,7 @@ Contact School
 </section>
 
 
-<footer>
-
-<p>
-Apex Public School<br>
-Anjani Bazar, Near SBI Anjani Branch<br>
-Parsa, Saran<br>
-Pin 841219
-</p>
-
-<p>
-Mobile and WhatsApp: 8084243031<br>
-Email: Apexpublicschool61@gmail.com
-</p>
-
-</footer>
-
+<div id="footer"></div>
 
 <script src="script.js"></script>
 
