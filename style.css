@@ -39,6 +39,20 @@ font-size:28px;
 cursor:pointer;
 display:none;
 }
+nav
+{
+display:flex;
+gap:25px;
+justify-content:center;
+padding:12px;
+}
+
+nav a
+{
+text-decoration:none;
+color:#0A2A66;
+font-weight:600;
+}
 header
 {
 position:sticky;
@@ -435,6 +449,7 @@ padding:10px 18px;
 border-radius:50%;
 cursor:pointer;
 }
+
 
 
 
