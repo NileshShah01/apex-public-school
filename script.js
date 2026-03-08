@@ -2,37 +2,29 @@ document.addEventListener("DOMContentLoaded", function(){
 
 const counters = document.querySelectorAll(".counter");
 
-counters.forEach(counter => {
-
+counters.forEach(counter =>
+{
 counter.innerText = "0";
 
-const target = Number(counter.getAttribute("data-target"));
-let count = 0;
+const updateCounter = () =>
+{
+const target = +counter.getAttribute("data-target");
+const count = +counter.innerText;
 
-const speed = 120;
-
-const updateCounter = () => {
-
-const increment = target / speed;
-
-count = count + increment;
+const increment = target / 80;
 
 if(count < target)
 {
-counter.innerText = Math.ceil(count);
-setTimeout(updateCounter,40);
+counter.innerText = Math.ceil(count + increment);
+setTimeout(updateCounter,20);
 }
 else
 {
-counter.innerText = target + "+";
+counter.innerText = target;
 }
-
 };
 
 updateCounter();
-
-});
-
 });
 
 function toggleMenu()
@@ -102,6 +94,7 @@ reveals[i].classList.add("active");
 }
 
 window.addEventListener("scroll",revealSections);
+
 
 
 
