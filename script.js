@@ -37,7 +37,7 @@ updateCounter();
 
 function toggleMenu()
 {
-const menu = document.getElementById("nav-menu");
+let menu = document.getElementById("mobileMenu");
 menu.classList.toggle("show");
 }
 let slides = document.querySelectorAll(".slide");
@@ -107,3 +107,4 @@ reveals[i].classList.add("active");
 }
 
 window.addEventListener("scroll",revealSections);
+
