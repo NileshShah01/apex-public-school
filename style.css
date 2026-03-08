@@ -339,6 +339,27 @@ height:240px;
 object-fit:cover;
 border-radius:12px;
 }
+.slider-controls
+{
+position:absolute;
+bottom:20px;
+width:100%;
+display:flex;
+justify-content:center;
+gap:20px;
+z-index:3;
+}
+
+.slider-controls button
+{
+background:rgba(0,0,0,0.6);
+color:white;
+border:none;
+font-size:24px;
+padding:10px 18px;
+border-radius:50%;
+cursor:pointer;
+}
 
 
 
