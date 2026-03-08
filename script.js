@@ -1,4 +1,15 @@
+function loadComponent(id, file)
+{
+fetch(file)
+.then(response => response.text())
+.then(data =>
+{
+document.getElementById(id).innerHTML = data;
+});
+}
 
+loadComponent("header","header.html");
+loadComponent("footer","footer.html");
 /* HERO SLIDER */
 
 let slides = document.querySelectorAll(".slide");
@@ -144,3 +155,4 @@ header.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
 }
 
 });
+
