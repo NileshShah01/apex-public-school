@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,231 +10,181 @@
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 
-/* HERO */
+/* PLANET BACKGROUND */
 
-.admission-hero
+body
 {
-background:linear-gradient(rgba(10,42,102,0.7),rgba(30,77,183,0.7)),url("images/School-Building.jpeg");
+background-image:url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564");
 background-size:cover;
+background-attachment:fixed;
 background-position:center;
-color:white;
+cursor:default;
+}
+
+
+/* PAGE HEADER */
+
+.page-header
+{
 text-align:center;
-padding:80px 20px;
+padding:60px 20px;
+background:rgba(255,255,255,0.9);
 }
 
-.admission-hero h1
+.page-header h1
 {
-font-size:42px;
-margin-bottom:10px;
-}
-
-.hero-btn
-{
-margin-top:20px;
-padding:12px 22px;
-background:white;
+font-size:38px;
 color:#1E40AF;
-border:none;
-cursor:pointer;
-font-weight:bold;
 }
 
-/* PROCESS */
 
-.process
+/* SECTION */
+
+.section
 {
-padding:50px 20px;
 max-width:1100px;
 margin:auto;
-text-align:center;
+padding:50px 20px;
+background:rgba(255,255,255,0.95);
+border-radius:6px;
+margin-bottom:30px;
 }
 
-.steps
+
+/* ADMISSION BANNER */
+
+.ad-banner
+{
+width:100%;
+border-radius:6px;
+margin-bottom:30px;
+}
+
+
+/* GRID */
+
+.grid
 {
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
-margin-top:30px;
 }
 
-.step-card
+
+/* CARD */
+
+.card
 {
 background:white;
 padding:25px;
+text-align:center;
 border-radius:6px;
-box-shadow:0 5px 12px rgba(0,0,0,0.1);
+box-shadow:0 6px 14px rgba(0,0,0,0.12);
 transition:0.3s;
 }
 
-.step-card:hover
+.card:hover
 {
 transform:translateY(-8px);
 }
 
-/* DOCS */
-
-.docs
+.card i
 {
-background:#f4f7ff;
-padding:40px;
-text-align:center;
+font-size:35px;
+color:#1E40AF;
+margin-bottom:10px;
 }
 
-.docs ul
-{
-max-width:500px;
-margin:auto;
-text-align:left;
-}
 
-/* AGE TABLE */
+/* FEE TABLE */
 
-.age-table
+.fee-table
 {
-padding:40px 20px;
-text-align:center;
-}
-
-.age-table table
-{
-margin:auto;
+width:100%;
 border-collapse:collapse;
-width:400px;
+margin-top:20px;
 }
 
-.age-table td,
-.age-table th
+.fee-table th
+{
+background:#1E40AF;
+color:white;
+padding:10px;
+}
+
+.fee-table td
 {
 border:1px solid #ddd;
 padding:10px;
-}
-
-/* FACILITIES */
-
-.facilities-grid
-{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-padding:40px 20px;
-}
-
-.facility
-{
-background:white;
-padding:20px;
-text-align:center;
-border-radius:6px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.facility:hover
-{
-transform:scale(1.05);
-}
-
-/* COUNTERS */
-
-.achievements
-{
-background:#f4f7ff;
-padding:40px;
 text-align:center;
 }
 
-.counter-box
-{
-display:inline-block;
-margin:20px;
-}
 
-/* TEMPLATE SECTION */
+/* FAQ */
 
-.templates
+.faq
 {
-padding:40px 20px;
-max-width:1100px;
+max-width:800px;
 margin:auto;
-text-align:center;
 }
 
-.template-grid
+.faq-item
 {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:4px;
 }
 
-.template-card
+.faq-question
 {
-background:white;
-border-radius:6px;
-overflow:hidden;
-box-shadow:0 5px 12px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.template-card:hover
-{
-transform:scale(1.04);
-}
-
-.template-card img
-{
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.download-btn
-{
-display:block;
-padding:10px;
+padding:12px;
 background:#1E40AF;
 color:white;
-text-decoration:none;
+cursor:pointer;
 }
+
+.faq-answer
+{
+display:none;
+padding:12px;
+background:white;
+}
+
 
 /* FORM */
 
-.form-section
+.form-box
 {
-padding:40px;
-text-align:center;
+max-width:600px;
+margin:auto;
 }
 
-.form-section input,
-.form-section textarea
+.form-box input,
+.form-box select,
+.form-box textarea
 {
 width:100%;
-max-width:400px;
 padding:10px;
 margin:10px 0;
+border:1px solid #ccc;
 }
 
-.submit-btn
+.form-box button
 {
-padding:10px 18px;
+padding:12px;
 background:#1E40AF;
 color:white;
 border:none;
 cursor:pointer;
 }
 
-/* POINTER EFFECT */
-
-.cursor
+.form-box button:hover
 {
-position:fixed;
-width:20px;
-height:20px;
-background:#1E40AF;
-border-radius:50%;
-pointer-events:none;
-mix-blend-mode:difference;
+background:#2563EB;
 }
 
 </style>
@@ -242,75 +193,68 @@ mix-blend-mode:difference;
 
 <body>
 
-<header class="header">
+<div id="header"></div>
 
-<div class="header-container">
+<section class="page-header">
 
-<div class="logo-school">
+<h1>Admissions Open 2026-2027</h1>
 
-<img src="images/ApexPublicSchoolLogo.png" class="logo">
-
-<div class="school-title">
-<h1>Apex Public School</h1>
-<span class="location">Anjani Bazar</span>
-<p class="codes">UDISE: 10171706503 | Registration: 2111449</p>
-</div>
-
-</div>
-
-<nav class="main-menu">
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="academics.html">Academics</a>
-<a href="admissions.html">Admissions</a>
-<a href="facilities.html">Facilities</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
-<section class="admission-hero">
-
-<h1>Admission Open 2026-2027</h1>
 <p>Play Group to Class 8</p>
-
-<button class="hero-btn" onclick="location.href='contact.html'">
-Contact School
-</button>
 
 </section>
 
 
-<section class="process">
+<section class="section">
+
+<img src="images/School-Admission-OPen-Tamplate.jpeg" class="ad-banner">
+
+</section>
+
+
+<section class="section">
 
 <h2>Admission Process</h2>
 
-<div class="steps">
+<div class="grid">
 
-<div class="step-card">
-<h3>1️⃣ Inquiry</h3>
-<p>Visit school or call us</p>
+<div class="card">
+
+<i class="fa-solid fa-school"></i>
+
+<h3>Visit School</h3>
+
+<p>Visit Apex Public School office for enquiry</p>
+
 </div>
 
-<div class="step-card">
-<h3>2️⃣ Application</h3>
-<p>Fill admission form</p>
+<div class="card">
+
+<i class="fa-solid fa-file"></i>
+
+<h3>Fill Form</h3>
+
+<p>Fill the admission form with student details</p>
+
 </div>
 
-<div class="step-card">
-<h3>3️⃣ Documents</h3>
-<p>Submit required documents</p>
+<div class="card">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<h3>Submit Documents</h3>
+
+<p>Provide required admission documents</p>
+
 </div>
 
-<div class="step-card">
-<h3>4️⃣ Admission</h3>
-<p>Pay fees and confirm admission</p>
+<div class="card">
+
+<i class="fa-solid fa-money-bill"></i>
+
+<h3>Pay Fees</h3>
+
+<p>Pay admission and registration fees</p>
+
 </div>
 
 </div>
@@ -318,57 +262,77 @@ Contact School
 </section>
 
 
-<section class="docs">
+<section class="section">
 
 <h2>Required Documents</h2>
 
-<ul>
+<div class="grid">
 
-<li>📄 Birth Certificate</li>
-<li>📄 Aadhar Card</li>
-<li>📄 Transfer Certificate</li>
-<li>📄 Passport Photos</li>
-<li>📄 Previous Marksheet</li>
+<div class="card">Aadhar Card</div>
 
-</ul>
+<div class="card">Birth Certificate</div>
+
+<div class="card">Passport Size Photos</div>
+
+<div class="card">Transfer Certificate</div>
+
+</div>
 
 </section>
 
 
-<section class="age-table">
+<section class="section">
 
-<h2>Age Criteria</h2>
+<h2>Fee Structure</h2>
 
-<table>
+<table class="fee-table">
 
 <tr>
-<th>Class</th>
-<th>Age</th>
+
+<th>Fee Type</th>
+
+<th>Amount</th>
+
 </tr>
 
 <tr>
-<td>Play Group</td>
-<td>2+</td>
+
+<td>Registration Fees</td>
+
+<td>₹500</td>
+
 </tr>
 
 <tr>
-<td>Nursery</td>
-<td>3+</td>
+
+<td>School Dress</td>
+
+<td>₹1200</td>
+
 </tr>
 
 <tr>
-<td>LKG</td>
-<td>4+</td>
+
+<td>Books</td>
+
+<td>₹1500</td>
+
 </tr>
 
 <tr>
-<td>UKG</td>
-<td>5+</td>
+
+<td>Tuition Fees</td>
+
+<td>₹500 Monthly</td>
+
 </tr>
 
 <tr>
-<td>Class 1</td>
-<td>6+</td>
+
+<td>Transport</td>
+
+<td>₹300 Monthly</td>
+
 </tr>
 
 </table>
@@ -376,125 +340,148 @@ Contact School
 </section>
 
 
-<section class="facilities-grid">
+<section class="section">
 
-<div class="facility">Smart Classroom</div>
-<div class="facility">Computer Lab</div>
-<div class="facility">Sports Ground</div>
-<div class="facility">CCTV Security</div>
-<div class="facility">Transport</div>
+<h2>Facilities for Students</h2>
 
-</section>
+<div class="grid">
 
+<div class="card">Smart Classrooms</div>
 
-<section class="achievements">
+<div class="card">Computer Lab</div>
 
-<div class="counter-box">
-<h2 class="counter" data-target="300">0</h2>
-<p>Students</p>
-</div>
+<div class="card">Sports Ground</div>
 
-<div class="counter-box">
-<h2 class="counter" data-target="15">0</h2>
-<p>Teachers</p>
-</div>
+<div class="card">Playground</div>
 
-<div class="counter-box">
-<h2 class="counter" data-target="12">0</h2>
-<p>Classrooms</p>
-</div>
+<div class="card">CCTV Security</div>
 
-</section>
-
-
-<section class="templates">
-
-<h2>Admission Form Templates</h2>
-
-<div class="template-grid">
-
-<div class="template-card">
-<img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
-<a class="download-btn" href="#">Download Template</a>
-</div>
-
-<div class="template-card">
-<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
-<a class="download-btn" href="#">Download Template</a>
-</div>
-
-<div class="template-card">
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
-<a class="download-btn" href="#">Download Template</a>
-</div>
+<div class="card">Transport Facility</div>
 
 </div>
 
 </section>
 
 
-<section class="form-section">
+<section class="section faq">
+
+<h2>Admission FAQ</h2>
+
+<div class="faq-item">
+
+<div class="faq-question">When does admission start?</div>
+
+<div class="faq-answer">Admissions start from late March for the new academic session.</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">Which classes are available?</div>
+
+<div class="faq-answer">Play Group to Class 8.</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">Is transport available?</div>
+
+<div class="faq-answer">Yes transport facility is available for students.</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
 
 <h2>Admission Inquiry</h2>
 
-<input placeholder="Student Name">
-<input placeholder="Parent Name">
-<input placeholder="Phone Number">
+<div class="form-box">
+
+<input type="text" placeholder="Student Name">
+
+<input type="text" placeholder="Parent Name">
+
+<select>
+
+<option>Select Class</option>
+
+<option>Play Group</option>
+
+<option>Nursery</option>
+
+<option>LKG</option>
+
+<option>UKG</option>
+
+<option>Class 1</option>
+
+<option>Class 2</option>
+
+<option>Class 3</option>
+
+<option>Class 4</option>
+
+<option>Class 5</option>
+
+<option>Class 6</option>
+
+<option>Class 7</option>
+
+<option>Class 8</option>
+
+</select>
+
+<input type="text" placeholder="Mobile Number">
+
 <textarea placeholder="Message"></textarea>
 
-<br>
+<button>Submit Inquiry</button>
 
-<button class="submit-btn">Submit Inquiry</button>
+</div>
 
 </section>
 
 
-<footer>
+<div id="footer"></div>
 
-<p>
-Apex Public School<br>
-Anjani Bazar, Near SBI Anjani Branch<br>
-Parsa, Saran<br>
-Pin 841219
-</p>
 
-<p>
-Mobile: 8084243031<br>
-Email: Apexpublicschool61@gmail.com
-</p>
-
-</footer>
-
+<script src="script.js"></script>
 
 <script>
 
-/* COUNTERS */
+/* FAQ */
 
-document.querySelectorAll(".counter").forEach(counter=>{
+document.querySelectorAll(".faq-question").forEach(q => {
 
-counter.innerText="0"
+q.addEventListener("click", () => {
 
-const update=()=>{
-const target=+counter.getAttribute("data-target")
-const count=+counter.innerText
-const inc=target/80
+let ans = q.nextElementSibling
 
-if(count<target)
-{
-counter.innerText=Math.ceil(count+inc)
-setTimeout(update,20)
-}
-else
-{
-counter.innerText=target
-}
-}
+ans.style.display = ans.style.display === "block" ? "none" : "block"
 
-update()
+})
+
+})
+
+/* MOUSE PARALLAX BACKGROUND */
+
+document.addEventListener("mousemove", e => {
+
+let x = e.clientX / window.innerWidth
+
+let y = e.clientY / window.innerHeight
+
+document.body.style.backgroundPosition = `${x*40}px ${y*40}px`
 
 })
 
 </script>
 
 </body>
+
 </html>
