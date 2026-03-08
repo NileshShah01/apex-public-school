@@ -24,8 +24,9 @@ text-decoration:none;
 .hero
 {
 height:400px;
-background:url("School-Building.jpeg");
+background:url("images/School-Building.jpeg");
 background-size:cover;
+background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -73,4 +74,5 @@ color:white;
 padding:20px;
 text-align:center;
 }
+
 
