@@ -703,3 +703,61 @@ display:flex;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
+
+/* ==================== HOMEPAGE FACILITIES SLIDER (Same as Facilities Page) ==================== */
+.facilities-slider {
+    padding: 60px 20px;
+    background: #f8fafc;
+    text-align: center;
+}
+.facilities-slider h2 {
+    color: #1E40AF;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.slider-track {
+    display: flex;
+    gap: 25px;
+    overflow: hidden;
+    animation: slideFacilities 25s linear infinite;
+}
+
+.facility-slide {
+    min-width: 320px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.facility-slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.facility-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(30, 64, 175, 0.92);
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Slider Animation */
+@keyframes slideFacilities {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.facilities-slider:hover .slider-track {
+    animation-play-state: paused;
+}
